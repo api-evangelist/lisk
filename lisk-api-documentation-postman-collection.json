@@ -1,0 +1,1106 @@
+{
+    "id": "87b1dcf9bf2dd7666badd169dd0e5193",
+    "name": "Lisk API Documentation",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "f070b926f2798d234e9eb236c8a2eb0e",
+            "name": "Requests account data",
+            "url": "https\/api\/accounts",
+            "description": "Search for matching accounts in the system.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "address",
+                    "description": "Address of an account",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "publicKey",
+                    "description": "Public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "secondPublicKey",
+                    "description": "Second public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "username",
+                    "description": "Delegate username to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "a3a32824026581c9c023dabb128fc891",
+            "name": "Requests multisignature groups data",
+            "url": "https\/api\/accounts\/{address}\/multisignature_groups",
+            "description": "Searches for the specified account in the system and responds with a list of the multisignature groups that this account is member of.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "address",
+                    "description": "Lisk address of an account",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "127f81c813d4aebc2a9f2dd7bd63e086",
+            "name": "Requests multisignature membership data",
+            "url": "https\/api\/accounts\/{address}\/multisignature_memberships",
+            "description": "Searches for the specified multisignature group and responds with a list of all members of this particular multisignature group.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "address",
+                    "description": "Lisk address of an account",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "2d178a28255f0f8b6e41a018ab877553",
+            "name": "Requests dapps data",
+            "url": "https\/api\/dapps",
+            "description": "Search for a specified dapp in the system.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "transactionId",
+                    "description": "Dapp registration transaction ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "name",
+                    "description": "Name to query - Fuzzy search",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "b2ae8c2382107c4d96ae743b57b5cf91",
+            "name": "Requests peers data",
+            "url": "https\/api\/peers",
+            "description": "Search for specified peers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "ip",
+                    "description": "IP of the node or delegate",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "httpPort",
+                    "description": "Http port of the node or delegate",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "wsPort",
+                    "description": "Web socket port for the node or delegate",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "os",
+                    "description": "OS of the node",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "version",
+                    "description": "Lisk version of the node",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "state",
+                    "description": "Current state of the network",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "height",
+                    "description": "Current height of the network",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "broadhash",
+                    "description": "Broadhash of the network",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "c736260f18f605e5900a41cd5f93e7c6",
+            "name": "Requests constants data",
+            "url": "https\/api\/node\/constants",
+            "description": "Returns all current constants data on the system, e.g. Lisk epoch time and version.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "9bf7829606bda683bb0fda4a7eb305dc",
+            "name": "Requests status data",
+            "url": "https\/api\/node\/status",
+            "description": "Returns all current status data of the node, e.g. height and broadhash.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "d90a326da96f2acee0ed4a61a0f50816",
+            "name": "Requests forging status of a delegate",
+            "url": "https\/api\/node\/status\/forging",
+            "description": "*Attention! This is a **private endpoint only authorized to whitelisted IPs.**\nTo edit the whitelist, please edit the `forging.access.whitelist` section in `config.json`*<br>\nResponds with the forging status of a delegate on a node.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "publicKey",
+                    "description": "Public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "f388f0ac4a7692b6d7b0fbc5707e5186",
+            "name": "Toggles the forging status of a delegate",
+            "url": "https\/api\/node\/status\/forging",
+            "description": "*Attention! This is a **private endpoint only authorized to whitelisted IPs.**\nTo edit the whitelist, please edit the `forging.access.whitelist` section in `config.json`*<br>\nUpon passing the correct password and publicKey, forging will be enabled or disabled for the delegate of this particular node.\nThe password can be generated locally by encrypting your passphrase, either by using Lisk Commander or with Lisk Elements.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "data",
+                    "description": "Password for decrypting passphrase of delegate with corresponding public key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "9ac7857fafabf16374626dfd8ab73611",
+            "name": "Requests unprocessed transactions data",
+            "url": "https\/api\/node\/transactions\/{state}",
+            "description": "By specifying the state of the transactions, you get a list of unprocessed transactions matching this state.\nSearch for specific transactions by providing the appropriate parameters.\nIf you post a batch of transactions, they will appear in the unprocessed list after a small delay, depending on server load.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "state",
+                    "description": "State of transactions to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "Transaction id to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "recipientId",
+                    "description": "Recipient lisk address",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "recipientPublicKey",
+                    "description": "Recipient public key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "senderId",
+                    "description": "Sender lisk address",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "senderPublicKey",
+                    "description": "Sender public key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "type",
+                    "description": "Transaction type (0-7)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "152ee9abf2febc903a4e8d8cb0268c9b",
+            "name": "Requests delegates data",
+            "url": "https\/api\/delegates",
+            "description": "Search for a specified delegate in the system.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "address",
+                    "description": "Address of an account",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "publicKey",
+                    "description": "Public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "secondPublicKey",
+                    "description": "Second public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "username",
+                    "description": "Delegate username to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "search",
+                    "description": "Fuzzy delegate username to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "66165f85309964af3529818c681f908d",
+            "name": "Requests next forgers data",
+            "url": "https\/api\/delegates\/forgers",
+            "description": "Returns a list of the next forgers in this delegate round.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "a599a1660a9ff9e5b092efca9db71681",
+            "name": "Requests forging stats by delegate",
+            "url": "https\/api\/delegates\/{address}\/forging_statistics",
+            "description": "By passing an existing delegate address and the desired unix timestamps, you can get its forging statistics within the specified timespan.\nIf no timestamps are provided, it will use the timestamps from Lisk epoch to current date.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "address",
+                    "description": "Lisk address of an account",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fromTimestamp",
+                    "description": "Starting unix timestamp",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "toTimestamp",
+                    "description": "Ending unix timestamp",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "8982364c499c32f3dc7a2bf1ef7c9791",
+            "name": "Requests blocks data",
+            "url": "https\/api\/blocks",
+            "description": "Search for a specified block in the system.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "blockId",
+                    "description": "Block id to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "height",
+                    "description": "Current height of the network",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "generatorPublicKey",
+                    "description": "Public key of the forger of the block",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "1029e7de6aa52e2d5200103b0307f013",
+            "name": "Requests voters data for a delegate",
+            "url": "https\/api\/voters",
+            "description": "*Attention: At least **one of the filter parameters must be provided.***\nReturns all votes received by a delegate.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "username",
+                    "description": "Delegate username to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "address",
+                    "description": "Address of an account",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "publicKey",
+                    "description": "Public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "secondPublicKey",
+                    "description": "Second public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "31148796e979123263fe5dfd65c04259",
+            "name": "Requests votes data for an account",
+            "url": "https\/api\/votes",
+            "description": "*Attention: At least **one of the filter parameters must be provided.***\nReturns all votes placed by an account.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "username",
+                    "description": "Delegate username to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "address",
+                    "description": "Address of an account",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "publicKey",
+                    "description": "Public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "secondPublicKey",
+                    "description": "Second public key to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "8880c129d49cdf8851574b1bf1f7bace",
+            "name": "Submits a signature object to sign multisignature transactions",
+            "url": "https\/api\/signatures",
+            "description": "Submits signature to sign a multisignature transaction.\nSignature objects can be generated locally either by using Lisk Commander or with Lisk Elements.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "signature",
+                    "description": "Signature object to submit to the network",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "0bb51ff4979fbb14b243ac63ef71381e",
+            "name": "Requests transactions data",
+            "url": "https\/api\/transactions",
+            "description": "Search for a specified transaction in the system.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Transaction id to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "recipientId",
+                    "description": "Recipient lisk address",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "recipientPublicKey",
+                    "description": "Recipient public key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "senderId",
+                    "description": "Sender lisk address",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "senderPublicKey",
+                    "description": "Sender public key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "senderIdOrRecipientId",
+                    "description": "Lisk address",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "type",
+                    "description": "Transaction type (0-7)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "height",
+                    "description": "Current height of the network",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "minAmount",
+                    "description": "Minimum transaction amount in Beddows",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "maxAmount",
+                    "description": "Maximum transaction amount in Beddows",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fromTimestamp",
+                    "description": "Starting unix timestamp",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "toTimestamp",
+                    "description": "Ending unix timestamp",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "blockId",
+                    "description": "Block id to query",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit applied to results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset value for results",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Fields to sort results by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "7ed97ce42194297d87f1344ca7517459",
+            "name": "Submits signed transaction for processing",
+            "url": "https\/api\/transactions",
+            "description": "Submits signed transaction object for processing by the transaction pool.\nTransaction objects can be generated locally either by using Lisk Commander or with Lisk Elements.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "transaction",
+                    "description": "Transaction object to submit to the network",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        },
+        {
+            "id": "62649e32b9c17cd7bd20ddeb39df97c6",
+            "name": "",
+            "url": "https\/api\/spec",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "x-swagger-pipe",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "rawModeData": ""
+        }
+    ]
+}
