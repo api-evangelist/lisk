@@ -1,0 +1,2022 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Lisk API Documentation",
+        "description": "# Welcome!\n\n## Access Restrictions\nThe API endpoints are by default restricted to a whitelist of IPs that can be found in `config.json` in the section [`api.access.whitelist`](https:\/\/github.com\/LiskHQ\/lisk\/blob\/1.0.0\/config.json#L35).\nIf you want your API to be accessable by the public, you can do this by changing `api.access.public` to `true`.\nThis will allow anyone to make requests to your Lisk Core node.\nHowever some endpoints stay private, that means only a list of whitelisted IPs can successfully make API calls to that particular endpoint;\nThis includes all forging related API calls.\nBy default, only the nodes' local IP is included in the whitelist, you can change the setting in `config.json` in the section [`forging.access.whitelist`](https:\/\/github.com\/LiskHQ\/lisk\/blob\/1.0.0\/config.json#L114).\nFor more details, see the descriptions at the respective endpoint.\n\n## Requests\nChained filter parameters are logically connected with `AND`.\n`HTTP` is the supported URL schema by default",
+        "termsOfService": ""
+    },
+    "servers": [
+        "https\/api"
+    ],
+    "paths": {
+        "\/accounts": {
+            "get": {
+                "summary": "Requests account data",
+                "description": "Search for matching accounts in the system.",
+                "operationId": "GetAccounts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "description": "Address of an account"
+                    },
+                    {
+                        "name": "publicKey",
+                        "in": "query",
+                        "description": "Public key to query"
+                    },
+                    {
+                        "name": "secondPublicKey",
+                        "in": "query",
+                        "description": "Second public key to query"
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "Delegate username to query"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{address}\/multisignature_groups": {
+            "get": {
+                "summary": "Requests multisignature groups data",
+                "description": "Searches for the specified account in the system and responds with a list of the multisignature groups that this account is member of.",
+                "operationId": "GetMultisignatureGroups",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "address",
+                        "in": "path",
+                        "description": "Lisk address of an account"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{address}\/multisignature_memberships": {
+            "get": {
+                "summary": "Requests multisignature membership data",
+                "description": "Searches for the specified multisignature group and responds with a list of all members of this particular multisignature group.",
+                "operationId": "GetMultisignatureMemberships",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "address",
+                        "in": "path",
+                        "description": "Lisk address of an account"
+                    }
+                ]
+            }
+        },
+        "\/dapps": {
+            "get": {
+                "summary": "Requests dapps data",
+                "description": "Search for a specified dapp in the system.",
+                "operationId": "GetDapps",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "transactionId",
+                        "in": "query",
+                        "description": "Dapp registration transaction ID"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Name to query - Fuzzy search"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    }
+                ]
+            }
+        },
+        "\/peers": {
+            "get": {
+                "summary": "Requests peers data",
+                "description": "Search for specified peers.",
+                "operationId": "GetPeers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "ip",
+                        "in": "query",
+                        "description": "IP of the node or delegate"
+                    },
+                    {
+                        "name": "httpPort",
+                        "in": "query",
+                        "description": "Http port of the node or delegate"
+                    },
+                    {
+                        "name": "wsPort",
+                        "in": "query",
+                        "description": "Web socket port for the node or delegate"
+                    },
+                    {
+                        "name": "os",
+                        "in": "query",
+                        "description": "OS of the node"
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "description": "Lisk version of the node"
+                    },
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "description": "Current state of the network"
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "description": "Current height of the network"
+                    },
+                    {
+                        "name": "broadhash",
+                        "in": "query",
+                        "description": "Broadhash of the network"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    }
+                ]
+            }
+        },
+        "\/node\/constants": {
+            "get": {
+                "summary": "Requests constants data",
+                "description": "Returns all current constants data on the system, e.g. Lisk epoch time and version.",
+                "operationId": "GetConstants",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/node\/status": {
+            "get": {
+                "summary": "Requests status data",
+                "description": "Returns all current status data of the node, e.g. height and broadhash.",
+                "operationId": "GetStatus",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/node\/status\/forging": {
+            "get": {
+                "summary": "Requests forging status of a delegate",
+                "description": "*Attention! This is a **private endpoint only authorized to whitelisted IPs.**\nTo edit the whitelist, please edit the `forging.access.whitelist` section in `config.json`*<br>\nResponds with the forging status of a delegate on a node.\n",
+                "operationId": "GetForgingStatus",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "publicKey",
+                        "in": "query",
+                        "description": "Public key to query"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Toggles the forging status of a delegate",
+                "description": "*Attention! This is a **private endpoint only authorized to whitelisted IPs.**\nTo edit the whitelist, please edit the `forging.access.whitelist` section in `config.json`*<br>\nUpon passing the correct password and publicKey, forging will be enabled or disabled for the delegate of this particular node.\nThe password can be generated locally by encrypting your passphrase, either by using Lisk Commander or with Lisk Elements.\n",
+                "operationId": "UpdateForgingStatus",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "description": "Password for decrypting passphrase of delegate with corresponding public key"
+                    }
+                ]
+            }
+        },
+        "\/node\/transactions\/{state}": {
+            "get": {
+                "summary": "Requests unprocessed transactions data",
+                "description": "By specifying the state of the transactions, you get a list of unprocessed transactions matching this state.\nSearch for specific transactions by providing the appropriate parameters.\nIf you post a batch of transactions, they will appear in the unprocessed list after a small delay, depending on server load.\n",
+                "operationId": "GetPooledTransactions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "state",
+                        "in": "path",
+                        "description": "State of transactions to query"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Transaction id to query"
+                    },
+                    {
+                        "name": "recipientId",
+                        "in": "query",
+                        "description": "Recipient lisk address"
+                    },
+                    {
+                        "name": "recipientPublicKey",
+                        "in": "query",
+                        "description": "Recipient public key"
+                    },
+                    {
+                        "name": "senderId",
+                        "in": "query",
+                        "description": "Sender lisk address"
+                    },
+                    {
+                        "name": "senderPublicKey",
+                        "in": "query",
+                        "description": "Sender public key"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Transaction type (0-7)"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    }
+                ]
+            }
+        },
+        "\/delegates": {
+            "get": {
+                "summary": "Requests delegates data",
+                "description": "Search for a specified delegate in the system.",
+                "operationId": "GetDelegates",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "description": "Address of an account"
+                    },
+                    {
+                        "name": "publicKey",
+                        "in": "query",
+                        "description": "Public key to query"
+                    },
+                    {
+                        "name": "secondPublicKey",
+                        "in": "query",
+                        "description": "Second public key to query"
+                    },
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "Delegate username to query"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Fuzzy delegate username to query"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    }
+                ]
+            }
+        },
+        "\/delegates\/forgers": {
+            "get": {
+                "summary": "Requests next forgers data",
+                "description": "Returns a list of the next forgers in this delegate round.\n",
+                "operationId": "GetForgers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    }
+                ]
+            }
+        },
+        "\/delegates\/{address}\/forging_statistics": {
+            "get": {
+                "summary": "Requests forging stats by delegate",
+                "description": "By passing an existing delegate address and the desired unix timestamps, you can get its forging statistics within the specified timespan.\nIf no timestamps are provided, it will use the timestamps from Lisk epoch to current date.\n",
+                "operationId": "GetForgingStatistics",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "address",
+                        "in": "path",
+                        "description": "Lisk address of an account"
+                    },
+                    {
+                        "name": "fromTimestamp",
+                        "in": "query",
+                        "description": "Starting unix timestamp"
+                    },
+                    {
+                        "name": "toTimestamp",
+                        "in": "query",
+                        "description": "Ending unix timestamp"
+                    }
+                ]
+            }
+        },
+        "\/blocks": {
+            "get": {
+                "summary": "Requests blocks data",
+                "description": "Search for a specified block in the system.\n",
+                "operationId": "GetBlocks",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "blockId",
+                        "in": "query",
+                        "description": "Block id to query"
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "description": "Current height of the network"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "generatorPublicKey",
+                        "in": "query",
+                        "description": "Public key of the forger of the block"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    }
+                ]
+            }
+        },
+        "\/voters": {
+            "get": {
+                "summary": "Requests voters data for a delegate",
+                "description": "*Attention: At least **one of the filter parameters must be provided.***\nReturns all votes received by a delegate.\n",
+                "operationId": "GetVoters",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "Delegate username to query"
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "description": "Address of an account"
+                    },
+                    {
+                        "name": "publicKey",
+                        "in": "query",
+                        "description": "Public key to query"
+                    },
+                    {
+                        "name": "secondPublicKey",
+                        "in": "query",
+                        "description": "Second public key to query"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    }
+                ]
+            }
+        },
+        "\/votes": {
+            "get": {
+                "summary": "Requests votes data for an account",
+                "description": "*Attention: At least **one of the filter parameters must be provided.***\nReturns all votes placed by an account.\n",
+                "operationId": "GetVotes",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "Delegate username to query"
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "description": "Address of an account"
+                    },
+                    {
+                        "name": "publicKey",
+                        "in": "query",
+                        "description": "Public key to query"
+                    },
+                    {
+                        "name": "secondPublicKey",
+                        "in": "query",
+                        "description": "Second public key to query"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    }
+                ]
+            }
+        },
+        "\/signatures": {
+            "post": {
+                "summary": "Submits a signature object to sign multisignature transactions",
+                "description": "Submits signature to sign a multisignature transaction.\nSignature objects can be generated locally either by using Lisk Commander or with Lisk Elements.\n",
+                "operationId": "PostSignature",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "signature",
+                        "in": "body",
+                        "description": "Signature object to submit to the network"
+                    }
+                ]
+            }
+        },
+        "\/transactions": {
+            "get": {
+                "summary": "Requests transactions data",
+                "description": "Search for a specified transaction in the system.\n",
+                "operationId": "GetTransactions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Transaction id to query"
+                    },
+                    {
+                        "name": "recipientId",
+                        "in": "query",
+                        "description": "Recipient lisk address"
+                    },
+                    {
+                        "name": "recipientPublicKey",
+                        "in": "query",
+                        "description": "Recipient public key"
+                    },
+                    {
+                        "name": "senderId",
+                        "in": "query",
+                        "description": "Sender lisk address"
+                    },
+                    {
+                        "name": "senderPublicKey",
+                        "in": "query",
+                        "description": "Sender public key"
+                    },
+                    {
+                        "name": "senderIdOrRecipientId",
+                        "in": "query",
+                        "description": "Lisk address"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Transaction type (0-7)"
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "description": "Current height of the network"
+                    },
+                    {
+                        "name": "minAmount",
+                        "in": "query",
+                        "description": "Minimum transaction amount in Beddows"
+                    },
+                    {
+                        "name": "maxAmount",
+                        "in": "query",
+                        "description": "Maximum transaction amount in Beddows"
+                    },
+                    {
+                        "name": "fromTimestamp",
+                        "in": "query",
+                        "description": "Starting unix timestamp"
+                    },
+                    {
+                        "name": "toTimestamp",
+                        "in": "query",
+                        "description": "Ending unix timestamp"
+                    },
+                    {
+                        "name": "blockId",
+                        "in": "query",
+                        "description": "Block id to query"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit applied to results"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset value for results"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Fields to sort results by"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Submits signed transaction for processing",
+                "description": "Submits signed transaction object for processing by the transaction pool.\nTransaction objects can be generated locally either by using Lisk Commander or with Lisk Elements.\n",
+                "operationId": "PostTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "transaction",
+                        "in": "body",
+                        "description": "Transaction object to submit to the network"
+                    }
+                ]
+            }
+        },
+        "\/spec": {
+            "x-swagger-pipe": {
+                "summary": "",
+                "description": "",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Meta": {
+                "type": "object"
+            },
+            "TransactionRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "amount": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "fee": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "timestamp": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "senderId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "senderPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "senderSecondPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "recipientId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "signature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "signSignature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "signatures": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "asset": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "NodeStatusResponse": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "NodeConstantsResponse": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "PeersResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "AccountsResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "MultisignatureGroupsResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "meta": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "DappsResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "DelegatesResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ForgersResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ForgingStatusResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "meta": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ForgingStatsResponse": {
+                "type": "object",
+                "properties": {
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "BlocksResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "SignatureResponse": {
+                "type": "object",
+                "properties": {
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "TransactionsResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "GeneralStatusResponse": {
+                "type": "object",
+                "properties": {
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Transaction": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "amount": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "fee": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "blockId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "timestamp": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "senderId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "senderPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "senderSecondPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "recipientId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "recipientPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "signature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "signSignature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "signatures": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "confirmations": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "asset": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "receivedAt": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "relays": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "ready": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Signature": {
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "signature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Block": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "timestamp": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "generatorAddress": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "generatorPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "payloadLength": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "payloadHash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "blockSignature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "confirmations": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "previousBlockId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "numberOfTransactions": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "totalAmount": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "totalFee": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "reward": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "totalForged": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ReducedBlock": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "timestamp": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "generatorAddress": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "generatorPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "payloadLength": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "payloadHash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "blockSignature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "confirmations": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "previousBlockId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "CommonBlock": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "previousBlock": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ForgingStatus": {
+                "type": "object",
+                "properties": {
+                    "forging": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "VotersResponse": {
+                "type": "object",
+                "properties": {
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "VotesResponse": {
+                "type": "object",
+                "properties": {
+                    "links": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Forger": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "address": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "nextSlot": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ForgingStats": {
+                "type": "object",
+                "properties": {
+                    "fees": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "rewards": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "forged": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "count": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Dapp": {
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "icon": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "category": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "link": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "tags": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Peer": {
+                "type": "object",
+                "properties": {
+                    "ip": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "httpPort": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "wsPort": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "os": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "broadhash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "nonce": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "PeersList": {
+                "type": "object",
+                "properties": {
+                    "peers": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Fees": {
+                "type": "object",
+                "properties": {
+                    "send": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "vote": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "secondSignature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "delegate": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "multisignature": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "dappRegistration": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "dappWithdrawal": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "dappDeposit": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "NodeConstants": {
+                "type": "object",
+                "properties": {
+                    "epoch": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "milestone": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "build": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "commit": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "nethash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "supply": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "reward": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "nonce": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "NodeStatus": {
+                "type": "object",
+                "properties": {
+                    "broadhash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "consensus": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "loaded": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "networkHeight": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "syncing": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ProcessingError": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "NotFoundError": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "AccessDeniedError": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "UnexpectedError": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "RequestLimitError": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ParamErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "errors": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ParamError": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "in": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "errors": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ParamErrorMessage": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "path": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "secondPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "AccountExtended": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "balance": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "unconfirmedBalance": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "secondPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "MultisignatureGroup": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "balance": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "unconfirmedBalance": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "secondPublicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "min": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "lifetime": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "members": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Delegate": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "vote": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "rewards": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "producedBlocks": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "missedBlocks": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "approval": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "productivity": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "rank": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "DelegateWithAccount": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "vote": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "rewards": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "producedBlocks": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "missedBlocks": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "approval": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "productivity": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "rank": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "DelegateWithVoters": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "votes": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "address": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "balance": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "voters": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Voter": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "balance": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "DelegateWithVotes": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "balance": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "votesUsed": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "votesAvailable": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "votes": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "Vote": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "balance": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSPeerHeaders": {
+                "type": "object",
+                "properties": {
+                    "httpPort": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "wsPort": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "os": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "nethash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "broadhash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "nonce": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSPeerUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "socketId": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSSignaturesList": {
+                "type": "object",
+                "properties": {
+                    "nonce": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "signatures": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSBlocksCommonRequest": {
+                "type": "object",
+                "properties": {
+                    "ids": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSTransactionsRequest": {
+                "type": "object",
+                "properties": {
+                    "nonce": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "transactions": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSAccessObject": {
+                "type": "object",
+                "properties": {
+                    "authKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "updateType": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSTransactionsResponse": {
+                "type": "object",
+                "properties": {
+                    "transactions": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSSignaturesResponse": {
+                "type": "object",
+                "properties": {
+                    "signatures": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSBlocksBroadcast": {
+                "type": "object",
+                "properties": {
+                    "nonce": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "data": {
+                "type": "object",
+                "properties": {
+                    "forging": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "password": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "publicKey": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "PeersResponse_meta": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "DelegatesResponse_meta": {
+                "type": "object",
+                "properties": {
+                    "limit": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ForgersResponse_meta": {
+                "type": "object",
+                "properties": {
+                    "limit": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "currentSlot": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "lastBlockSlot": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "lastBlock": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "ForgingStatsResponse_meta": {
+                "type": "object",
+                "properties": {
+                    "fromTimestamp": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "toTimestamp": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "SignatureResponse_data": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "SignatureResponse_meta": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "TransactionsResponse_meta": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "GeneralStatusResponse_meta": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "NodeStatus_transactions": {
+                "type": "object",
+                "properties": {
+                    "unconfirmed": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "unsigned": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "unprocessed": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "confirmed": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "total": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            },
+            "WSPeerUpdateRequest_data": {
+                "type": "object",
+                "properties": {
+                    "nethash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "broadhash": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    },
+                    "nonce": {
+                        "description": "",
+                        "type": "x-swagger-pipe"
+                    }
+                }
+            }
+        }
+    }
+}
