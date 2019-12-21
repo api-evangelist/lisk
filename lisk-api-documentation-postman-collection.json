@@ -1,5 +1,5 @@
 {
-    "id": "87b1dcf9bf2dd7666badd169dd0e5193",
+    "id": "2db96079aec16bcfd8010a0656d47c2e",
     "name": "Lisk API Documentation",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "f070b926f2798d234e9eb236c8a2eb0e",
+            "id": "c41b75f6d49a28b53b29bf2eedf41c19",
             "name": "Requests account data",
             "url": "https\/api\/accounts",
             "description": "Search for matching accounts in the system.",
@@ -79,11 +79,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "a3a32824026581c9c023dabb128fc891",
+            "id": "ce6f44d76378292bdf03dabee684734c",
             "name": "Requests multisignature groups data",
             "url": "https\/api\/accounts\/{address}\/multisignature_groups",
             "description": "Searches for the specified account in the system and responds with a list of the multisignature groups that this account is member of.",
@@ -110,11 +110,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "127f81c813d4aebc2a9f2dd7bd63e086",
+            "id": "9703b62dfb72c86f50ad8d63cbb393cc",
             "name": "Requests multisignature membership data",
             "url": "https\/api\/accounts\/{address}\/multisignature_memberships",
             "description": "Searches for the specified multisignature group and responds with a list of all members of this particular multisignature group.",
@@ -141,11 +141,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "2d178a28255f0f8b6e41a018ab877553",
+            "id": "51beb9aacdc21984e613553595e77fd9",
             "name": "Requests dapps data",
             "url": "https\/api\/dapps",
             "description": "Search for a specified dapp in the system.",
@@ -200,11 +200,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "b2ae8c2382107c4d96ae743b57b5cf91",
+            "id": "f4374672935879788e3c27678882ae6f",
             "name": "Requests peers data",
             "url": "https\/api\/peers",
             "description": "Search for specified peers.",
@@ -301,11 +301,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "c736260f18f605e5900a41cd5f93e7c6",
+            "id": "57e64dec57c94b83e218888cf4a29fb3",
             "name": "Requests constants data",
             "url": "https\/api\/node\/constants",
             "description": "Returns all current constants data on the system, e.g. Lisk epoch time and version.",
@@ -324,11 +324,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "9bf7829606bda683bb0fda4a7eb305dc",
+            "id": "9bd300a8fae8f7fedfaa581210d02e62",
             "name": "Requests status data",
             "url": "https\/api\/node\/status",
             "description": "Returns all current status data of the node, e.g. height and broadhash.",
@@ -347,11 +347,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "d90a326da96f2acee0ed4a61a0f50816",
+            "id": "2ea649bea431e606d16e97fb87225e43",
             "name": "Requests forging status of a delegate",
             "url": "https\/api\/node\/status\/forging",
             "description": "*Attention! This is a **private endpoint only authorized to whitelisted IPs.**\nTo edit the whitelist, please edit the `forging.access.whitelist` section in `config.json`*<br>\nResponds with the forging status of a delegate on a node.\n",
@@ -378,11 +378,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "f388f0ac4a7692b6d7b0fbc5707e5186",
+            "id": "9768ee04d0f486e1a88147374fab232d",
             "name": "Toggles the forging status of a delegate",
             "url": "https\/api\/node\/status\/forging",
             "description": "*Attention! This is a **private endpoint only authorized to whitelisted IPs.**\nTo edit the whitelist, please edit the `forging.access.whitelist` section in `config.json`*<br>\nUpon passing the correct password and publicKey, forging will be enabled or disabled for the delegate of this particular node.\nThe password can be generated locally by encrypting your passphrase, either by using Lisk Commander or with Lisk Elements.\n",
@@ -409,11 +409,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "9ac7857fafabf16374626dfd8ab73611",
+            "id": "361cc39cb743ba7b4fa86589d271795f",
             "name": "Requests unprocessed transactions data",
             "url": "https\/api\/node\/transactions\/{state}",
             "description": "By specifying the state of the transactions, you get a list of unprocessed transactions matching this state.\nSearch for specific transactions by providing the appropriate parameters.\nIf you post a batch of transactions, they will appear in the unprocessed list after a small delay, depending on server load.\n",
@@ -503,11 +503,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "152ee9abf2febc903a4e8d8cb0268c9b",
+            "id": "31cef7175e08c8acc9c5b929342b7b25",
             "name": "Requests delegates data",
             "url": "https\/api\/delegates",
             "description": "Search for a specified delegate in the system.",
@@ -583,11 +583,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "66165f85309964af3529818c681f908d",
+            "id": "f6034aab2d804023f6974be68939a45b",
             "name": "Requests next forgers data",
             "url": "https\/api\/delegates\/forgers",
             "description": "Returns a list of the next forgers in this delegate round.\n",
@@ -621,11 +621,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "a599a1660a9ff9e5b092efca9db71681",
+            "id": "27450fd71dacad6b0f04555ce3b3f0e7",
             "name": "Requests forging stats by delegate",
             "url": "https\/api\/delegates\/{address}\/forging_statistics",
             "description": "By passing an existing delegate address and the desired unix timestamps, you can get its forging statistics within the specified timespan.\nIf no timestamps are provided, it will use the timestamps from Lisk epoch to current date.\n",
@@ -666,11 +666,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "8982364c499c32f3dc7a2bf1ef7c9791",
+            "id": "89d2a262cb0ba77ebbe1b42d6e3f91d8",
             "name": "Requests blocks data",
             "url": "https\/api\/blocks",
             "description": "Search for a specified block in the system.\n",
@@ -732,11 +732,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "1029e7de6aa52e2d5200103b0307f013",
+            "id": "02ae41cb6639524377c6523f6f2bcd4a",
             "name": "Requests voters data for a delegate",
             "url": "https\/api\/voters",
             "description": "*Attention: At least **one of the filter parameters must be provided.***\nReturns all votes received by a delegate.\n",
@@ -805,11 +805,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "31148796e979123263fe5dfd65c04259",
+            "id": "cb59b9fa4137d2d4e8697e6b5ce71773",
             "name": "Requests votes data for an account",
             "url": "https\/api\/votes",
             "description": "*Attention: At least **one of the filter parameters must be provided.***\nReturns all votes placed by an account.\n",
@@ -878,11 +878,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "8880c129d49cdf8851574b1bf1f7bace",
+            "id": "b03ae27f3bc4b918bd38513f236347d2",
             "name": "Submits a signature object to sign multisignature transactions",
             "url": "https\/api\/signatures",
             "description": "Submits signature to sign a multisignature transaction.\nSignature objects can be generated locally either by using Lisk Commander or with Lisk Elements.\n",
@@ -909,11 +909,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "0bb51ff4979fbb14b243ac63ef71381e",
+            "id": "32d069036b682cc4f199e3e50f9a2d8d",
             "name": "Requests transactions data",
             "url": "https\/api\/transactions",
             "description": "Search for a specified transaction in the system.\n",
@@ -1045,11 +1045,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "7ed97ce42194297d87f1344ca7517459",
+            "id": "1ae3142e9b31f5f008427b8689ea4ffe",
             "name": "Submits signed transaction for processing",
             "url": "https\/api\/transactions",
             "description": "Submits signed transaction object for processing by the transaction pool.\nTransaction objects can be generated locally either by using Lisk Commander or with Lisk Elements.\n",
@@ -1076,11 +1076,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         },
         {
-            "id": "62649e32b9c17cd7bd20ddeb39df97c6",
+            "id": "3d9d244a9ade9a2cb461a886ffd5e0cc",
             "name": "",
             "url": "https\/api\/spec",
             "description": "",
@@ -1099,7 +1099,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "87b1dcf9bf2dd7666badd169dd0e5193",
+            "collectionId": "2db96079aec16bcfd8010a0656d47c2e",
             "rawModeData": ""
         }
     ]
